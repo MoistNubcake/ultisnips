@@ -401,6 +401,18 @@ class SnippetDefinition:
         else:
             return False
 
+    def do_post_finish(self):
+        if "post_finish" in self._actions:
+            locals = {"buffer": vim_helper.buf}
+
+            snip = self._execute_action(
+                self._actions["post_finish"], self._context, locals
+            )
+            self._context = snip.context
+            return True
+        else:
+            return False
+
     def do_post_expand(self, start, end, snippets_stack):
         if "post_expand" in self._actions:
             locals = {

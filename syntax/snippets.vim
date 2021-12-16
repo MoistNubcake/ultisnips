@@ -164,8 +164,8 @@ syn region snipContextValueP start=,"\@<=., end=,\ze", contained contains=@Pytho
 
 " Actions {{{3
 
-syn match snipAction "^\%(pre_expand\|post_expand\|post_jump\).*$" contains=snipActionKeyword display skipwhite
-syn match snipActionKeyword "\%(pre_expand\|post_expand\|post_jump\)" contained nextgroup=snipActionValue skipwhite display
+syn match snipAction "^\%(pre_expand\|post_expand\|post_jump\|post_finish\).*$" contains=snipActionKeyword display skipwhite
+syn match snipActionKeyword "\%(pre_expand\|post_expand\|post_jump\|post_finish\)" contained nextgroup=snipActionValue skipwhite display
 syn match snipActionValue '"[^"]*"' contained contains=snipActionValueP
 syn region snipActionValueP start=,"\@<=., end=,\ze", contained contains=@Python skipwhite keepend
 
