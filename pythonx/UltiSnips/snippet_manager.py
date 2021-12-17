@@ -533,7 +533,7 @@ class SnippetManager:
 
         with use_proxy_buffer(self._active_snippets, self._vstate):
             with self._action_context():
-                self._current_snippet.snippet.do_post_finish()
+                self._current_snippet.snippet.do_post_finish(self._current_snippet)
 
         self._active_snippets.pop()
         if not self._active_snippets:
